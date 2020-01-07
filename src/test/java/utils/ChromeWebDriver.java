@@ -1,5 +1,6 @@
 package utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -9,7 +10,8 @@ import java.util.concurrent.TimeUnit;
 
 public class ChromeWebDriver {
 
-    private static WebDriver LoadChromeDriver(boolean headless){
+    public static WebDriver loadChromeDriver(boolean headless){
+        WebDriverManager.chromedriver().setup();
         ChromeDriverService driverService = ChromeDriverService.createDefaultService();
 
         ChromeOptions options = new ChromeOptions();
