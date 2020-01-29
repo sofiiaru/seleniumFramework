@@ -1,0 +1,86 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Making sure google search is working as expected",
+        "description": "",
+        "id": "google-search-feature;making-sure-google-search-is-working-as-expected",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3305794154,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User is on the homepage",
+            "match": {
+              "location": "GoogleSearchSteps.user_is_on_the_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 167974018,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User enters flowers",
+            "match": {
+              "location": "GoogleSearchSteps.user_enters_flowers()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1426380359,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks search button",
+            "match": {
+              "location": "GoogleSearchSteps.user_clicks_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Keyword flowers was not located in title\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.assertTrue(Assert.java:42)\r\n\tat steps.GoogleSearchSteps.user_should_see_results_related_to_flowers(GoogleSearchSteps.java:33)\r\n\tat ✽.user should see results related to flowers(src/test/java/features/GoogleSearch.feature:9)\r\n",
+              "duration": 7414206,
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "user should see results related to flowers",
+            "match": {
+              "location": "GoogleSearchSteps.user_should_see_results_related_to_flowers()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@google"
+          }
+        ]
+      }
+    ],
+    "name": "Google search feature",
+    "description": "",
+    "id": "google-search-feature",
+    "keyword": "Feature",
+    "uri": "src/test/java/features/GoogleSearch.feature",
+    "tags": [
+      {
+        "name": "@google",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
