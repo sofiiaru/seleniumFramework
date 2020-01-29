@@ -19,6 +19,9 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "User is on the homepage",
   "keyword": "Given "
@@ -59,5 +62,9 @@ formatter.match({
 formatter.result({
   "error_message": "java.lang.AssertionError: Keyword flowers was not located in title\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.assertTrue(Assert.java:42)\r\n\tat steps.GoogleSearchSteps.user_should_see_results_related_to_flowers(GoogleSearchSteps.java:33)\r\n\tat ✽.user should see results related to flowers(src/test/java/features/GoogleSearch.feature:9)\r\n",
   "status": "failed"
+});
+formatter.embedding("image/png", "embedded0.png");
+formatter.after({
+  "status": "passed"
 });
 });

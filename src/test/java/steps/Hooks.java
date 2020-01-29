@@ -1,11 +1,10 @@
 package steps;
 
 import cucumber.api.Scenario;
-import org.junit.After;
-import org.junit.Before;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import utils.ConfigReader;
 import utils.Driver;
 
 public class Hooks {
@@ -13,13 +12,14 @@ public class Hooks {
     @Before
     public void setUp(){
         Driver.getDriver().manage().window().maximize();
+        //you can set an environment here
     }
 
     @After
     public void tearDown(Scenario scenario){
         //we will take screenshot if scenario fails
         try{
-            if(scenario.isFailed() && ConfigReader.getProperty("headless").toLowerCase().equals("false")){
+            if(scenario.isFailed()){
                 final byte[] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
                 scenario.embed(screenshot, "image/png");
             }
